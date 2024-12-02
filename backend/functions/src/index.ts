@@ -1,7 +1,11 @@
 import * as functions from "firebase-functions";
+import express from "express";
+import { mapsProxyHandler } from "./controllers/mapsProxyController";
 
-// Example: Hello World Function
-export const helloWorld = functions.https.onRequest((request, response) => {
-  console.log("HelloWorld function triggered");
-  response.send("Hello from Firebase!");
-});
+const app = express();
+
+// Route for Google Maps Proxy
+app.get("/maps/api/:service", mapsProxyHandler);
+
+// Export the function
+exports.api = functions.https.onRequest(app);
