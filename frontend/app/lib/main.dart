@@ -25,9 +25,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/signin',
       routes: {
-        '/signin': (context) => EmailSignInScreen(),
-        '/signup': (context) => EmailSignUpScreen(),
-        '/home': (context) => HomePage(userEmail: ''),
+        '/signin': (context) => const EmailSignInScreen(),
+        '/signup': (context) => const EmailSignUpScreen(),
+        '/home': (context) => const HomePage(userEmail: ''),
       },
     );
   }

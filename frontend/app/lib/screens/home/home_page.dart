@@ -6,7 +6,7 @@ import 'dart:convert';
 class HomePage extends StatefulWidget {
   final String userEmail;
 
-  const HomePage({Key? key, required this.userEmail}) : super(key: key);
+  const HomePage({super.key, required this.userEmail});
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late GoogleMapController mapController;
-  Set<Marker> _markers = {};
+  final Set<Marker> _markers = {};
   MapType _currentMapType = MapType.normal;
   static const String backendProxyUrl =
       'https://us-central1-campusconnect-0.cloudfunctions.net/api/maps/api';
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         Marker(
           markerId: MarkerId(position.toString()),
           position: position,
-          infoWindow: InfoWindow(title: 'New Marker'),
+          infoWindow: const InfoWindow(title: 'New Marker'),
         ),
       );
     });
@@ -66,10 +66,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             onPressed: () {
               Navigator.pushReplacementNamed(
                   context, '/signin'); // Log out and return to sign-in screen
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Welcome, ${widget.userEmail}!',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
           ),
           Expanded(
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
               onTap: _onTap,
               markers: _markers,
               mapType: _currentMapType,
-              initialCameraPosition: CameraPosition(
+              initialCameraPosition: const CameraPosition(
                 target: LatLng(44.565732,
                     -123.278934), // Default position (Oregon State University MU Quad)
                 zoom: 10,
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleMapType,
-        child: Icon(Icons.layers),
+        child: const Icon(Icons.layers),
       ),
     );
   }

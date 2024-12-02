@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../home/home_page.dart';
 
 class EmailSignInScreen extends StatefulWidget {
+  const EmailSignInScreen({super.key});
+
   @override
   _EmailSignInScreenState createState() => _EmailSignInScreenState();
 }
@@ -27,7 +29,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
           password: _passwordController.text.trim(),
         );
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Successfully signed in!')),
+          const SnackBar(content: Text('Successfully signed in!')),
         );
         // Navigate to Home Page
         Navigator.pushReplacement(
@@ -60,7 +62,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign In')),
+      appBar: AppBar(title: const Text('Sign In')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -71,7 +73,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
               TextFormField(
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
@@ -81,11 +83,11 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
                 obscureText: true,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
@@ -93,18 +95,18 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _isLoading
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : ElevatedButton(
                       onPressed: _signInWithEmailAndPassword,
-                      child: Text('Sign In'),
+                      child: const Text('Sign In'),
                     ),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/signup');
                 },
-                child: Text('Don’t have an account? Sign Up'),
+                child: const Text('Don’t have an account? Sign Up'),
               ),
             ],
           ),
