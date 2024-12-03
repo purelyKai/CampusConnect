@@ -46,3 +46,23 @@
     firebase deploy --only functions
     ```
 - **Frontend:**
+
+  Update and set up flutter.
+
+  ```bash
+  cd frontend/app
+  flutter pub get
+  ```
+
+  Run the app:
+
+  - Web:
+    ```bash
+    flutter run
+    ```
+  - Mobile (Android):
+    ```bash
+    flutter emulator --launch Medium_Phone_API_35
+    flutter run
+    ```
+    For mobile, ensure Android Studio is properly configured. Replace `Medium_Phone_API_35` with your device.
