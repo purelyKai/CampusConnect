@@ -79,13 +79,6 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Welcome, ${widget.userEmail}!',
-              style: const TextStyle(fontSize: 24),
-            ),
-          ),
           Expanded(
             child: GoogleMap(
               onMapCreated: _onMapCreated,
