@@ -17,7 +17,7 @@
 
 - **Mapping and Location Services:**
 
-  - **Mapbox Flutter Plugin:** Provides interactive map features and custom pin placements.
+  - **Google Maps Flutter Plugin:** Provides interactive map features and custom pin placements.
   - **Geolocator Plugin:** Allows the app to obtain and use user location data.
   - **Geofencing Plugin:** Enables location-based notifications and features.
 
@@ -25,17 +25,14 @@
 
   - **Firebase:**
     - **Firebase Authentication:** Manages user authentication and sign-in.
-    - **Firebase Firestore:** Stores and synchronizes data in real time.
+    - **Firebase Firestore:** Stores and synchronizes data in real-time.
     - **Firebase Cloud Functions:** Executes serverless backend logic.
     - **Firebase Cloud Storage:** Handles file storage for user-uploaded content.
-    - **Firebase Cloud Messaging (FCM):** Sends notifications to users.
+    - **Firebase Cloud Messaging:** Sends notifications to users.
 
 - **Analytics:**
 
   - **Google Analytics for Firebase:** Tracks user engagement and app performance.
-
-- **CI/CD:**
-  - **GitHub Actions:** Automates the build, test, and deployment workflows.
 
 ## Developer Notes
 
